@@ -39,7 +39,7 @@ a1 = Account(init_deposit)
 
 
 while True:
-    ask = input("->Do you want to 'Debit' or 'Credit' amount?\n").lower()
+    ask = input("->Do you want to 'Debit' or 'Credit' amount?\nor write 'done' to leave.\n").lower()
     if ask == "debit":
         while True:
             amount = input("->How much amount do you want to debit?\n")
@@ -65,3 +65,5 @@ while True:
     else:
         print("Invalid Entry\n")
         continue
+
+print("Thanks! Have a good day :)")
