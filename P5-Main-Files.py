@@ -2,9 +2,8 @@
 
 class Account:
 
-    def __init__(self, balence, account_info):
+    def __init__(self, balence):
         self.balence = balence
-        self.account_info = account_info
 
     def debit(self, amount):
         self.balence -= amount
@@ -22,7 +21,7 @@ while True:
 
     if init_deposit.isdigit():
         init_deposit = int(init_deposit)
-        if init_deposit <= 0:
+        if init_deposit == 0:
             print("Please enter amount more than zero.")
             continue
         else:
@@ -33,7 +32,10 @@ while True:
 
 print("You initial deposit is Rs.", init_deposit)
 
+a1 = Account(init_deposit)
 
-# a1 = Account(10000, 2313)
-# a1.debit(500)
-# a1.credit(2000)
+ask = input("Do you want to debit or credit amount?\n").lower()
+
+if ask == "debit":
+    amount = input("How much amount do you want to debit?\n")
+    a1.debit(amount)
